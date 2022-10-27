@@ -1,0 +1,55 @@
+.mainContainer {
+  width: 400px;
+  height: fit-content;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5da;
+  font-size: 17px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 9px 0px #2a2a2ae7;
+  transition: all 1s ease-in-out;
+  animation-duration: 2s;
+  animation-name: onMount;
+}
+.mainContainer:hover {
+  transform: scale(1.2);
+}
+@keyframes onMount {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.mainContainer img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5px;
+}
+.tempsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.tempsContainer span {
+  padding: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+  color: #f5f5f5;
+  background-color: #b8b8b8;
+}
+.details {
+  align-self: center;
+  padding: 7px;
+  text-decoration: none;
+  color: #f5f5f5;
+  background-color: #d13648;
+  font-size: 20px;
+  border-radius: 7px;
+  transition: all 0.5s ease-in-out;
+}
+.details:hover {
+  background-color: #464b7a;
+}

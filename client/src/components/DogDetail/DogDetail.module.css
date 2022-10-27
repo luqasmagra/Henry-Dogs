@@ -1,0 +1,92 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #ffe6008e;
+  background-image: url("../utils/background.png");
+  background-position: 100% 0;
+}
+.mainContainer h2 {
+  align-self: center;
+  width: max-content;
+  padding: 5px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+.dogContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  padding: 20px;
+  background-color: #d13648f8;
+  box-shadow: 0px 0px 30px 0px #2a2a2ae7;
+}
+.dogContainer img {
+  border-radius: 5px;
+  max-width: 600px;
+  max-height: 600px;
+}
+.dogDescription {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+}
+.dogDescription span {
+  font-size: 20px;
+  background-color: #b8b8b8d3;
+  padding: 5px;
+  color: #f5f5f5;
+  margin-left: 5px;
+  margin-top: 5px;
+  border-radius: 3px;
+}
+.dogDescription h1 {
+  font-size: 50px;
+}
+.dogDescription p {
+  padding-top: 10px;
+  font-size: 18px;
+}
+.error {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 300px;
+  height: 100vh;
+}
+.relationatedContainer {
+  background-color: #d13648f8;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  padding: 10px;
+  box-shadow: 0px 0px 30px 0px #2a2a2ae7;
+}
+.relationatedDogContainer {
+  border-radius: 5px;
+  background-color: #f5f5f5af;
+  padding: 10px;
+  height: max-content;
+}
+.relationatedDogContainer img {
+  max-width: 100%;
+  max-height: 200px;
+}
+@media screen and (max-width: 1000px) {
+  .dogContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 260px;
+  }
+  .dogDescription {
+    max-width: 180px;
+  }
+  .dogDescription h1 {
+    align-self: center;
+  }
+  .dogTemps {
+    display: flex;
+    flex-direction: column;
+  }
+}

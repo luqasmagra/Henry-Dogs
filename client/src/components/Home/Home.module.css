@@ -1,0 +1,61 @@
+.mainContainer {
+  height: 100%;
+  background-color: #ffe6008e;
+  background-image: url("../utils/background.png");
+  background-position: 100% 0;
+}
+.dogsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+  padding: 30px;
+  height: 100%;
+}
+.sortContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 80px;
+  height: 150px;
+}
+.sortContainer select {
+  padding: 13px;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: #464b7a;
+  color: #f5f5f5;
+  transition: all 0.2s ease-in-out;
+}
+.sortContainer select:hover {
+  cursor: pointer;
+  background-color: #d13648;
+}
+.sortContainer img {
+  padding: 10px;
+  height: 20px;
+  border-radius: 30px;
+  background-color: #464b7a;
+  color: #f5f5f5;
+  transition: all 0.2s ease-in-out;
+}
+.sortContainer img:hover {
+  cursor: pointer;
+  background-color: #d13648;
+  box-shadow: 0px 0px 9px 0px #2a2a2ae7;
+}
+.error {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  height: 100vh;
+}
+
+@media screen and (max-width: 1000px) {
+  .sortContainer {
+    margin-top: 230px;
+    margin-right: 0px;
+    justify-content: center;
+  }
+}
