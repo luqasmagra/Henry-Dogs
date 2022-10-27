@@ -92,7 +92,7 @@
   .relationatedContainer {
     display: none;
   }
-  h2 {
+  .mainContainer h2 {
     display: none;
   }
 }
