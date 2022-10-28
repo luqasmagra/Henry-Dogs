@@ -82,6 +82,9 @@
     flex-direction: column;
     margin-top: 300px;
   }
+  .dogContainer img {
+    max-width: min-content;
+  }
   .dogDescription {
     max-width: 180px;
   }

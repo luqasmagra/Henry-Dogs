@@ -70,11 +70,16 @@ const Form = () => {
       alert("Failed to connect to server");
     } else {
       if (input.life_span < 0) alert("Life span must be a greater than 0");
+      else if (!input.name) alert("Name is required");
       else if (
         input.heightMin > input.heightMax ||
         input.weightMin > input.weightMax
       )
         alert("Minimum height/weight must be less than maximum");
+      else if (!input.heightMin || !input.heightMax)
+        alert("Height is required");
+      else if (!input.weightMin || !input.weightMax)
+        alert("Weight is required");
       else {
         const response = postDog(input);
 
@@ -102,7 +107,6 @@ const Form = () => {
           <div className={style.inputsContainer}>
             <h4>Name</h4>
             <input
-              required
               name="name"
               type="text"
               value={input.name}
@@ -120,7 +124,6 @@ const Form = () => {
             <h4>Height</h4>
             min:
             <input
-              required
               name="heightMin"
               type="number"
               value={input.heightMin}
@@ -129,7 +132,6 @@ const Form = () => {
             />
             max:
             <input
-              required
               name="heightMax"
               type="number"
               value={input.heightMax}
@@ -142,7 +144,6 @@ const Form = () => {
             <h4>Weight</h4>
             min:
             <input
-              required
               name="weightMin"
               type="number"
               value={input.weightMin}
@@ -151,7 +152,6 @@ const Form = () => {
             />
             max:
             <input
-              required
               name="weightMax"
               type="number"
               value={input.weightMax}
