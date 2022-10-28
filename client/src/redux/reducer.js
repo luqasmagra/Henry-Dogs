@@ -140,7 +140,7 @@ const rootReducer = (state = initialState, action) => {
     case GET_ERROR:
       return {
         ...state,
-        error: action.payload,
+        error: [action.payload],
       };
     default:
       return { ...state };
