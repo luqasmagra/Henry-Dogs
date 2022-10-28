@@ -13,6 +13,7 @@ const Form = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const allTemps = useSelector((state) => state.temps);
+  const error = useSelector((state) => state.error);
   const [errors, setErrors] = useState({});
   const [input, setInput] = useState({
     name: "",
@@ -63,21 +64,26 @@ const Form = () => {
       [e.target.name]: url,
     });
   };
-  const handlerSubmit = async (e, input) => {
+  const handlerSubmit = (e, input) => {
     e.preventDefault();
-    if (input.life_span < 0) alert("Life span must be a greater than 0");
-    else if (
-      input.heightMin > input.heightMax ||
-      input.weightMin > input.weightMax
-    )
-      alert("Minimum height/weight must be less than maximum");
-    else {
-      const response = await postDog(input);
-      if (typeof response.data === "string")
-        alert("There is already a breed with that name");
+    if (error.length) {
+      alert("Error al conectar con el servidor");
+    } else {
+      if (input.life_span < 0) alert("Life span must be a greater than 0");
+      else if (
+        input.heightMin > input.heightMax ||
+        input.weightMin > input.weightMax
+      )
+        alert("Minimum height/weight must be less than maximum");
       else {
-        alert("Successfully created");
-        history.push("/home");
+        const response = postDog(input);
+
+        if (typeof response.data === "string")
+          alert("There is already a breed with that name");
+        else {
+          alert("Successfully created");
+          history.push("/home");
+        }
       }
     }
   };
@@ -169,7 +175,7 @@ const Form = () => {
           </div>
           <h4>Temperament</h4>
           <div className={style.tempsContainer}>
-            {allTemps ? (
+            {allTemps &&
               allTemps.map((t, index) => {
                 return (
                   <div key={index}>
@@ -183,10 +189,7 @@ const Form = () => {
                     />
                   </div>
                 );
-              })
-            ) : (
-              <p>no temps</p>
-            )}
+              })}
           </div>
           <button type="submit" value="Create">
             CREATE

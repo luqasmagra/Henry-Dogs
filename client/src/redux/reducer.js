@@ -7,6 +7,7 @@ import {
   GET_TEMPS,
   ORDER_BY_NAME,
   ORDER_BY_WEIGHT,
+  GET_ERROR,
 } from "./actions";
 
 const initialState = {
@@ -14,6 +15,7 @@ const initialState = {
   allDogs: [],
   dogDetail: {},
   temps: [],
+  error: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -135,6 +137,11 @@ const rootReducer = (state = initialState, action) => {
         dogs: orderWeight,
       };
     }
+    case GET_ERROR:
+      return {
+        ...state,
+        error: action.payload,
+      };
     default:
       return { ...state };
   }
