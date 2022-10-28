@@ -53,9 +53,9 @@ const DogDetail = () => {
         </div>
       ) : (
         <div>
-          {error.length ? (
-            <div>
-              <h1>Error al conectar con el servidor</h1>
+          {error ? (
+            <div className={style.errorContainer}>
+              <h1>Failed to connect to server</h1>
             </div>
           ) : (
             <div>

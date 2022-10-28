@@ -67,7 +67,7 @@ const Form = () => {
   const handlerSubmit = (e, input) => {
     e.preventDefault();
     if (error.length) {
-      alert("Error al conectar con el servidor");
+      alert("Failed to connect to server");
     } else {
       if (input.life_span < 0) alert("Life span must be a greater than 0");
       else if (

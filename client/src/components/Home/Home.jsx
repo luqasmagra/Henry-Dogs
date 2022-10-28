@@ -21,6 +21,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const allDogs = useSelector((state) => state.dogs);
   const allTemps = useSelector((state) => state.temps);
+  const error = useSelector((state) => state.error);
   const [currentPage, setCurrentPage] = useState(1);
   const [dogsPerPage] = useState(8);
   const indexLastDog = currentPage * dogsPerPage;
@@ -133,27 +134,33 @@ const Home = () => {
               currentPage={currentPage}
             />
           </div>
-          <div className={style.dogsContainer}>
-            {Array.isArray(currentDogs) ? (
-              currentDogs.map((d, index) => {
-                return (
-                  <Dog
-                    id={d.id}
-                    name={d.name}
-                    image={d.image}
-                    temps={d.temps}
-                    weight={d.weight}
-                    key={index}
-                  />
-                );
-              })
-            ) : (
-              <div className={style.error}>
-                <h1>{allDogs}</h1>
-                <img src={shadow} alt="shadow" />
-              </div>
-            )}
-          </div>
+          {error ? (
+            <div className={style.errorContainer}>
+              <h1>Failed to connect to server</h1>
+            </div>
+          ) : (
+            <div className={style.dogsContainer}>
+              {Array.isArray(currentDogs) ? (
+                currentDogs.map((d, index) => {
+                  return (
+                    <Dog
+                      id={d.id}
+                      name={d.name}
+                      image={d.image}
+                      temps={d.temps}
+                      weight={d.weight}
+                      key={index}
+                    />
+                  );
+                })
+              ) : (
+                <div className={style.error}>
+                  <h1>{allDogs}</h1>
+                  <img src={shadow} alt="shadow" />
+                </div>
+              )}
+            </div>
+          )}
           <br />
           <br />
         </div>
