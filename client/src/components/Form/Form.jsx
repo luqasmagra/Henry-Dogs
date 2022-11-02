@@ -17,11 +17,11 @@ const Form = () => {
   const [errors, setErrors] = useState({});
   const [input, setInput] = useState({
     name: "",
-    heightMin: "",
-    heightMax: "",
-    weightMin: "",
-    weightMax: "",
-    life_span: "",
+    heightMin: 0,
+    heightMax: 0,
+    weightMin: 0,
+    weightMax: 0,
+    life_span: 0,
     temperament: [],
     image: "",
   });
