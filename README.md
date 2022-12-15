@@ -10,7 +10,6 @@
 - Afirmar y conectar los conceptos aprendidos en la carrera.
 - Aprender mejores prácticas.
 - Aprender y practicar el workflow de GIT.
-- Usar y practicar testing.
 
 ## Horarios y Fechas
 
@@ -177,9 +176,3 @@ Se debe desarrollar un servidor en Node/Express con las siguientes rutas:
 - [ ] **GET /temperaments**:
   - Obtener todos los temperamentos posibles
   - En una primera instancia deberán obtenerlos desde la API externa y guardarlos en su propia base de datos y luego ya utilizarlos desde allí
-
-## Testing
-
-- [ ] Al menos tener un componente del frontend con sus tests respectivos
-- [ ] Al menos tener una ruta del backend con sus tests respectivos
-- [ ] Al menos tener un modelo de la base de datos con sus tests respectivos
